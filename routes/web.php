@@ -28,12 +28,13 @@ Route::get('/strahan', [StrahanController::class, 'index'] );
 Route::get('/strahan/jadwal', function () {
     return view('strahan.input-jadwal');
 });
+Route::post('/strahan/jadwal', [StrahanController::class, 'create'])->name('strahan.jadwal.store');
+
 Route::get('/strahan/input-success', function () {
     return view('strahan.input-success');
 });
-Route::get('/strahan/jadwal-rapat', function () {
-    return view('strahan.jadwal-rapat');
-});
+Route::get('/strahan/jadwal-rapat', [StrahanController::class, 'findDate'])->name('strahan.jadwal_rapat.store');
+
 Route::get('/strahan/rupat1', function () {
     return view('strahan.rupat1');
 });

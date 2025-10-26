@@ -11,9 +11,10 @@
                     Anda berhasil menambahkan Jadwal Rapat, selanjutnya Anda akan dibawa ke Halaman Jadwal Rapat
                 </div>
                 <div class="flex justify-center pt-4">
-                    <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-8 rounded shadow-md">
+                    <a href="{{ url('/strahan/jadwal-rapat') }}"
+                        class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-8 rounded shadow-md inline-block text-center">
                         OK
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>

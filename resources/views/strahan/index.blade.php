@@ -7,9 +7,6 @@
         <!-- VIDEO AREA -->
         <div class="flex-1 bg-white rounded-lg shadow-md p-4 flex flex-col items-center justify-center">
             <div class="relative w-full">
-                <div class="absolute top-3 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white text-sm font-semibold px-6 py-1 rounded">
-                    MENAMPILKAN VIDEO DARI FOLDER LOKAL
-                </div>
                  <img src="{{ asset('img/upacara.png') }}" alt="upacara" class="w-full mt-5 rounded-md border border-gray-300">
                 {{-- <video class="w-full mt-10 rounded-md border border-gray-300" controls>
                     <source src="{{ asset('videos/upacara.mp4') }}" type="video/mp4">
