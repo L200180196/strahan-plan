@@ -5,14 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Strahan extends Model
+class Rapats extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
-
-    public function rapat()
+    public function strahan()
     {
-        return $this->belongsTo(Rapats::class, 'tempat');
+        return $this->hasMany(Strahan::class, 'tempat');
     }
 }

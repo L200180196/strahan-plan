@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Strahan;
+use App\Models\Rapats;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -11,6 +12,14 @@ class StrahanController extends Controller
     public function index()
     {
         return view('strahan.index');
+    }
+
+    public function inputJadwal()
+    {
+        
+        return view('strahan.input-jadwal',[
+            'data' => Rapats::get()
+        ]);
     }
 
     public function getData()
@@ -31,7 +40,8 @@ class StrahanController extends Controller
         // Ambil jadwal dari database sesuai tanggal
         $data = Strahan::whereDate('tanggal', $tanggal)
             ->orderBy('jam', 'asc')
-            ->get();
+            ->with('rapat')->get();
+
 
         // Kirim data ke view
         return view('strahan.jadwal-rapat', [

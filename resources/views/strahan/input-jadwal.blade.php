@@ -22,7 +22,12 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-3">
                     <label class="font-bold text-black">Tempat :</label>
-                    <input name="tempat" type="text" class="border border-green-400 rounded-md px-2 py-1 w-full">
+                    <select name="tempat" class="border border-green-400 rounded-md px-2 py-1 w-full">
+                        <option value="">-- Pilih Tempat --</option>
+                        @foreach ($data as $tempat)
+                            <option value="{{ $tempat->id }}">{{ $tempat->nama_rupat }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-3">
                     <label class="font-bold text-black">Pimpinan :</label>

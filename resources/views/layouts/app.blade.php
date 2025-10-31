@@ -48,12 +48,16 @@
 
                 <div id="dropdownMenu"
                     class="absolute right-0 mt-1 bg-blue-600 text-white text-sm rounded-md shadow-md hidden z-50 w-44">
-                    <a href="/strahan/jadwal" class="block px-4 py-2 hover:bg-blue-500">INPUT JADWAL</a>
-                    <a href="/strahan/jadwal-rapat" class="block px-4 py-2 hover:bg-blue-500">JADWAL RAPAT</a>
-                    <a href="#" class="block px-4 py-2 hover:bg-blue-500">RUPAT KERSIN</a>
+                    <a href="/strahan/jadwal" class="block px-4 py-2 hover:bg-blue-500">Input Jadwal</a>
+                    <a href="/strahan/jadwal-rapat" class="block px-4 py-2 hover:bg-blue-500">Jadwal Rapat</a>
+                    <a href="/strahan/aula-tritura" class="block px-4 py-2 hover:bg-blue-500">Aula Tritura</a>
+                    <a href="/strahan/rupat-wilhan" class="block px-4 py-2 hover:bg-blue-500">Rupat Wilhan</a>
+                    <a href="/strahan/rupat-kersin" class="block px-4 py-2 hover:bg-blue-500">Rupat Kersin</a>
+                    <a href="/strahan/rupat-jakstra" class="block px-4 py-2 hover:bg-blue-500">Rupat Jakstra</a>
+                    <a href="/strahan/rupat-rahkomhan" class="block px-4 py-2 hover:bg-blue-500">Rupat Rahkomhan</a>
                 </div>
             </div>
-            <a href="#" class="font-semibold hover:underline">LOGIN</a>
+            <a href="/strahan/login" class="font-semibold hover:underline">LOGIN</a>
         </div>
     </header>
 

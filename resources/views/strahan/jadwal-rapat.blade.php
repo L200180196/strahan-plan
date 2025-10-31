@@ -23,38 +23,42 @@
 
         <!-- Tabel Jadwal -->
         <div class="overflow-x-auto w-full max-w-5xl">
-            <table class="w-full border border-blue-800 text-sm text-left text-black">
-                <thead class="bg-blue-700 text-white">
-                    <tr>
-                        <th class="px-3 py-2 border border-blue-800 text-center w-12">NO</th>
-                        <th class="px-3 py-2 border border-blue-800 text-center w-24">JAM</th>
-                        <th class="px-3 py-2 border border-blue-800 text-center">NAMA RAPAT</th>
-                        <th class="px-3 py-2 border border-blue-800 text-center">TEMPAT</th>
-                        <th class="px-3 py-2 border border-blue-800 text-center">PIMPINAN</th>
-                        <th class="px-3 py-2 border border-blue-800 text-center">KETERANGAN</th>
-                    </tr>
-                </thead>
-                <tbody class="bg-blue-100">
-                    @forelse ($jadwals as $jadwal)
-                        <tr class="odd:bg-blue-50 even:bg-blue-100">
-                            <td class="border border-blue-800 text-center">{{ $loop->iteration }}</td>
-                            <td class="border border-blue-800 text-center">
-                                {{ \Carbon\Carbon::parse($jadwal->jam)->format('H:i') }}
-                            </td>
-                            <td class="border border-blue-800">{{ strtoupper($jadwal->nama_rapat) }}</td>
-                            <td class="border border-blue-800">{{ $jadwal->tempat }}</td>
-                            <td class="border border-blue-800">{{ $jadwal->pimpinan }}</td>
-                            <td class="border border-blue-800">{{ $jadwal->keterangan }}</td>
-                        </tr>
-                    @empty
-                        <tr>
-                            <td colspan="6" class="border border-blue-800 text-center py-4 text-gray-500">
-                                Belum ada data jadwal rapat.
-                            </td>
-                        </tr>
-                    @endforelse
-                </tbody>
-            </table>
+            <div class="w-full overflow-x-auto">
+    <table class="min-w-full border border-blue-800 text-base text-left text-black table-auto">
+        <thead class="bg-blue-700 text-white">
+            <tr>
+                <th class="px-4 py-3 border border-blue-800 text-center w-12">NO</th>
+                <th class="px-4 py-3 border border-blue-800 text-center w-32">JAM</th>
+                <th class="px-4 py-3 border border-blue-800 text-center">NAMA RAPAT</th>
+                <th class="px-4 py-3 border border-blue-800 text-center w-48">TEMPAT</th>
+                <th class="px-4 py-3 border border-blue-800 text-center w-48">PIMPINAN</th>
+                <th class="px-4 py-3 border border-blue-800 text-center w-64">KETERANGAN</th>
+            </tr>
+        </thead>
+
+        <tbody class="bg-blue-100">
+            @forelse ($jadwals as $jadwal)
+                <tr class="odd:bg-blue-50 even:bg-blue-100 hover:bg-blue-200 transition">
+                    <td class="border border-blue-800 text-center font-semibold py-3 px-3">{{ $loop->iteration }}</td>
+                    <td class="border border-blue-800 text-center py-3 px-3">
+                        {{ \Carbon\Carbon::parse($jadwal->jam)->format('H:i') }}
+                    </td>
+                    <td class="border border-blue-800 font-medium py-3 px-3">{{ strtoupper($jadwal->nama_rapat) }}</td>
+                    <td class="border border-blue-800 py-3 px-3">{{ $jadwal->rapat->nama_rupat }}</td>
+                    <td class="border border-blue-800 py-3 px-3">{{ $jadwal->pimpinan }}</td>
+                    <td class="border border-blue-800 py-3 px-3">{{ $jadwal->keterangan }}</td>
+                </tr>
+            @empty
+                <tr>
+                    <td colspan="6" class="border border-blue-800 text-center py-6 text-gray-500 text-lg">
+                        Belum ada data jadwal rapat.
+                    </td>
+                </tr>
+            @endforelse
+        </tbody>
+    </table>
+</div>
+
         </div>
     </main>
 @endsection

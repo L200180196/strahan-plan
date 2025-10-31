@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\StrahanController;
+use App\Http\Controllers\RapatController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TesController;
 use App\Http\Controllers\ToDoController;
 use App\Http\Controllers\WorkerController;
@@ -25,9 +27,7 @@ Route::post('/to-do', [ToDoController::class, 'create'] );
 Route::get('/workers', [WorkerController::class, 'getAll'] );
 
 Route::get('/strahan', [StrahanController::class, 'index'] );
-Route::get('/strahan/jadwal', function () {
-    return view('strahan.input-jadwal');
-});
+Route::get('/strahan/jadwal', [StrahanController::class, 'inputJadwal'] );
 Route::post('/strahan/jadwal', [StrahanController::class, 'create'])->name('strahan.jadwal.store');
 
 Route::get('/strahan/input-success', function () {
@@ -35,6 +35,6 @@ Route::get('/strahan/input-success', function () {
 });
 Route::get('/strahan/jadwal-rapat', [StrahanController::class, 'findDate'])->name('strahan.jadwal_rapat.store');
 
-Route::get('/strahan/rupat1', function () {
-    return view('strahan.rupat1');
-});
+Route::get('/strahan/aula-tritura', [RapatController::class, 'aulaTritura'])->name('strahan.rapat.aula_tritura');
+
+Route::get('/strahan/login', [LoginController::class, 'index'] );
