@@ -38,3 +38,5 @@ Route::get('/strahan/jadwal-rapat', [StrahanController::class, 'findDate'])->nam
 Route::get('/strahan/aula-tritura', [RapatController::class, 'aulaTritura'])->name('strahan.rapat.aula_tritura');
 
 Route::get('/strahan/login', [LoginController::class, 'index'] );
+Route::get('/strahan/input-info', [LoginController::class, 'info'] );
+Route::get('/strahan/register', [LoginController::class, 'create'] );

@@ -20,7 +20,7 @@
 
             <!-- GALERI PIMPINAN -->
             <div class="bg-yellow-400 border border-black rounded-md text-center p-3">
-                <h2 class="bg-yellow-500 border-b border-black text-black font-bold py-1">GALERI PIMPINAN</h2>
+                <h2 class="bg-yellow-500 border-b border-black text-black font-bold py-1">PIMPINAN DITJEN STRAHAN</h2>
                 <div class="mt-2 bg-white border border-black flex flex-col items-center py-3">
                     <img src="{{ asset('img/pimpinan.png') }}" alt="Pimpinan" class="w-48 h-auto border border-gray-400 mb-2">
                     <p class="text-xs font-semibold">
@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="bg-orange-300 py-3">
-                    <p class="font-bold text-sm text-gray-900 underline">PENGUMUMAN :</p>
+                    <p class="font-bold text-sm text-gray-900">PENGUMUMAN :</p>
                     <p class="text-sm">UPACARA BENDERA JUMAT,<br>17 OKTOBER 2025</p>
                 </div>
             </div>

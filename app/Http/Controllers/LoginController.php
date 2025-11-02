@@ -11,11 +11,13 @@ class LoginController extends Controller
         return view('strahan.login.index');
     }
 
+    public function info()
+    {
+        return view('strahan.login.input-info');
+    }
+
     public function create(Request $request)
     {
-        return response()->json([
-            'status' => 400,
-            'message' => "TES"
-        ], 400);
+        return view('strahan.login.input-user');
     }
 }

@@ -9,7 +9,7 @@
             <form class="space-y-4"action="{{ route('strahan.jadwal.store') }}" method="post" enctype="multipart/form-data">
             @csrf
                 <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-3">
-                    <label class="font-bold text-black">Nama Rapat :</label>
+                    <label class="font-bold text-black">Judul Rapat :</label>
                     <input name="nama_rapat" type="text" class="border border-green-400 rounded-md px-2 py-1 w-full">
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-3">

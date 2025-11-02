@@ -62,9 +62,7 @@
     </header>
 
     <!-- MAIN CONTENT -->
-    <main class="flex-grow flex flex-col items-center py-10 px-4">
-        @yield('content')
-    </main>
+    @yield('content')
 
     <!-- FOOTER -->
     <footer class="bg-yellow-400 text-black text-sm flex justify-between items-center border-t overflow-hidden">

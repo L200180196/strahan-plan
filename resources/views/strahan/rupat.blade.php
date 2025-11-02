@@ -5,19 +5,16 @@
     <main class="flex-grow flex flex-col justify-center items-center px-4 py-10 bg-blue-100">
         <h2 class="text-center text-2xl font-bold text-black mb-6">{{ $data->rapat->nama_rupat }} LT.8 DITJEN STRAHAN
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl items-center">
+        <div class="grid md:grid-cols-3 gap-6 w-full items-center">
 
             <!-- Gambar 1 -->
             <div class="bg-white rounded-md shadow-md p-3 text-center">
                 <img src="{{ asset('storage/' . $data->gambar1) }}" alt="Gambar Rapat 1"
-                    class="w-full h-64 object-cover rounded-md mb-3 border border-gray-300">
-                <p class="font-semibold text-black">
-                    <span class="text-red-600 underline">Menampilkan</span> Gambar 1
-                </p>
+                    class="w-full h-auto object-cover rounded-md mb-3 border border-gray-300">
             </div>
 
             <!-- Informasi Tengah -->
-            <div class="bg-white rounded-md shadow-md p-6 text-center">
+            <div class="bg-white rounded-md shadow-md px-6 py-20 text-center">
                 <h2 class="text-xl font-bold mb-4">
                     {{ strtoupper(\Carbon\Carbon::parse($data->tanggal)->translatedFormat('l, d F Y')) }}
                 </h2>
@@ -32,10 +29,7 @@
             <!-- Gambar 2 -->
             <div class="bg-white rounded-md shadow-md p-3 text-center">
                 <img src="{{ asset('storage/' . $data->gambar2) }}" alt="Gambar Rapat 2"
-                    class="w-full h-64 object-cover rounded-md mb-3 border border-gray-300">
-                <p class="font-semibold text-black">
-                    <span class="text-red-600 underline">Menampilkan</span> Gambar 2
-                </p>
+                    class="w-full h-auto object-cover rounded-md mb-3 border border-gray-300">
             </div>
         </div>
 

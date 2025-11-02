@@ -44,6 +44,13 @@ class StrahanController extends Controller
 
 
         // Kirim data ke view
+
+        // return response()->json([
+        //     'status' => 400,
+        //     'jadwals' => $data,
+        //     'tanggal' => $tanggal,
+        // ], 400);
+
         return view('strahan.jadwal-rapat', [
             'jadwals' => $data,
             'tanggal' => $tanggal,
