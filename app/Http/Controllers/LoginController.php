@@ -11,10 +11,6 @@ class LoginController extends Controller
         return view('strahan.login.index');
     }
 
-    public function info()
-    {
-        return view('strahan.login.input-info');
-    }
 
     public function create(Request $request)
     {

@@ -9,7 +9,7 @@ class RapatController extends Controller
 {
     public function aulaTritura(Request $request)
     {
-        $data = Strahan::with('rapat')->first();
+        $data = Strahan::orderBy('tanggal', 'desc')->with('rapat')->where('tempat', 1)->first();
         // return response()->json([
         //     'status' => 200,
         //     'data' => $data
@@ -21,16 +21,37 @@ class RapatController extends Controller
 
     public function rupatwilhan()
     {
-        return view('strahan.index');
+        $data = Strahan::orderBy('tanggal', 'desc')->with('rapat')->where('tempat', 2)->first();
+        // return response()->json([
+        //     'status' => 200,
+        //     'data' => $data
+        // ], 200);
+        return view('strahan.rupat', [
+            'data' => $data
+        ]);
     }
 
     public function rupatkersin()
     {
-        return view('strahan.index');
+        $data = Strahan::orderBy('tanggal', 'desc')->with('rapat')->first();
+        // return response()->json([
+        //     'status' => 200,
+        //     'data' => $data
+        // ], 200);
+        return view('strahan.rupat', [
+            'data' => $data
+        ]);
     }
 
     public function rupatjakstra()
     {
-        return view('strahan.index');
+        $data = Strahan::orderBy('tanggal', 'desc')->with('rapat')->first();
+        // return response()->json([
+        //     'status' => 200,
+        //     'data' => $data
+        // ], 200);
+        return view('strahan.rupat', [
+            'data' => $data
+        ]);
     }
 }

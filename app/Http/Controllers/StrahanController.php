@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Info;
 use App\Models\Strahan;
 use App\Models\Rapats;
 use Illuminate\Http\Request;
@@ -11,12 +12,14 @@ class StrahanController extends Controller
 {
     public function index()
     {
-        return view('strahan.index');
+        $info = Info::get()->first();
+        return view('strahan.index', [
+            'info' => $info
+        ]);
     }
 
     public function inputJadwal()
     {
-        
         return view('strahan.input-jadwal',[
             'data' => Rapats::get()
         ]);

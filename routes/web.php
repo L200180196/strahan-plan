@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EditController;
 use App\Http\Controllers\StrahanController;
 use App\Http\Controllers\RapatController;
 use App\Http\Controllers\LoginController;
@@ -35,8 +36,15 @@ Route::get('/strahan/input-success', function () {
 });
 Route::get('/strahan/jadwal-rapat', [StrahanController::class, 'findDate'])->name('strahan.jadwal_rapat.store');
 
-Route::get('/strahan/aula-tritura', [RapatController::class, 'aulaTritura'])->name('strahan.rapat.aula_tritura');
+Route::get('/strahan/aula-tritura', [RapatController::class, 'aulaTritura']);
+Route::get('/strahan/rupat-wilhan', [RapatController::class, 'rupatwilhan']);
+Route::get('/strahan/rupat-kersin', [RapatController::class, 'rupatwilhan']);
+Route::get('/strahan/rupat-jakstra', [RapatController::class, 'rupatwilhan']);
+Route::get('/strahan/rupat-rahkomhan', [RapatController::class, 'rupatwilhan']);
 
 Route::get('/strahan/login', [LoginController::class, 'index'] );
-Route::get('/strahan/input-info', [LoginController::class, 'info'] );
 Route::get('/strahan/register', [LoginController::class, 'create'] );
+
+Route::get('/strahan/input-info', [EditController::class, 'info'] );
+Route::post('/strahan/input-info', [EditController::class, 'editInfo'] );
+Route::get('/strahan/input-video', [EditController::class, 'video'] );

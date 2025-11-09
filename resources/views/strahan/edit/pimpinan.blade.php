@@ -10,15 +10,14 @@
 
             <form action="/strahan/input-info" method="POST" class="space-y-5">
                 @csrf
-                <input name="id" type="text" class="border border-green-400 rounded-md px-2 py-1 w-full" value="{{ $data->id }}" hidden>
                 <div>
                     <label class="block text-gray-700 text-sm font-medium mb-2">Info Pertama</label>
-                    <textarea name="info1" class="border border-green-400 rounded-md px-2 py-1 w-full h-32" required>{{ $data->info1 }}</textarea>
+                    <textarea name="info1" class="border border-green-400 rounded-md px-2 py-1 w-full" required></textarea>
                 </div>
 
                 <div>
                     <label class="block text-gray-700 text-sm font-medium mb-2">Info Kedua</label>
-                    <textarea name="info2" class="border border-green-400 rounded-md px-2 py-1 w-full h-32" required>{{ $data->info2 }}</textarea>
+                    <textarea name="info2" class="border border-green-400 rounded-md px-2 py-1 w-full" required></textarea>
                 </div>
                 <div class="flex justify-center gap-6 pt-4">
                     <button type="reset"

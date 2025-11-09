@@ -36,14 +36,11 @@
                 <h2 class="bg-green-600 text-white font-bold py-1 border-b border-black">INFO STRAHAN</h2>
                 
                 <div class="bg-green-200 py-3 border-b border-black">
-                    <p class="font-bold text-sm text-gray-800">PAKAIAN HARI INI :</p>
-                    <p class="text-sm">TNI (PDH)</p>
-                    <p class="text-sm">PNS (PSKP)</p>
+                    <p class="font-bold text-sm text-gray-800">{{ $info->info1 }}</p>
                 </div>
 
                 <div class="bg-orange-300 py-3">
-                    <p class="font-bold text-sm text-gray-900">PENGUMUMAN :</p>
-                    <p class="text-sm">UPACARA BENDERA JUMAT,<br>17 OKTOBER 2025</p>
+                    <p class="font-bold text-sm text-gray-900">{{ $info->info2 }}</p>
                 </div>
             </div>
 

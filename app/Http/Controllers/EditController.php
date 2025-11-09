@@ -1,0 +1,56 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Info;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
+class EditController extends Controller
+{
+    public function info()
+    {
+        $data = Info::get()->first();
+        return view('strahan.login.input-info', [
+            'data' => $data
+        ]);
+    }
+
+    public function editInfo(Request $request) {
+        $info = Info::find($request->id);
+        if(!$info) {
+            return response()->json([
+                'status' => "Error 404",
+                'message' => 'Info not Found'
+            ], 404);
+        }
+
+        $data = $request->all();
+
+        $rules = [
+            'info1' => 'required|string',
+            'info2' => 'required|string'
+        ];
+
+        $validator = Validator::make($data, $rules);
+
+        if($validator->fails()) {
+            return response()->json([
+                'status' => 'Error 400',
+                'message' => $validator->errors()
+            ], 400);
+        }
+
+        $info->fill($data);
+        $info->save();
+        $data_baru = Info::get()->first();
+        return view('strahan.login.input-info', [
+            'data' => $data_baru
+        ]);
+    }
+
+    public function video()
+    {
+        return view('strahan.edit.video');
+    }
+}

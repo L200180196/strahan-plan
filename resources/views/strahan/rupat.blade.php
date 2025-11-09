@@ -3,7 +3,7 @@
 @section('content')
     <!-- MAIN CONTENT -->
     <main class="flex-grow flex flex-col justify-center items-center px-4 py-10 bg-blue-100">
-        <h2 class="text-center text-2xl font-bold text-black mb-6">{{ $data->rapat->nama_rupat }} LT.8 DITJEN STRAHAN
+        <h2 class="text-center text-2xl font-bold text-black mb-6">{{ $data->rapat->nama_rupat ?? '' }} LT.8 DITJEN STRAHAN
         </h2>
         <div class="grid md:grid-cols-3 gap-6 w-full items-center">
 
