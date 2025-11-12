@@ -33,7 +33,7 @@ class RapatController extends Controller
 
     public function rupatkersin()
     {
-        $data = Strahan::orderBy('tanggal', 'desc')->with('rapat')->first();
+        $data = Strahan::orderBy('tanggal', 'desc')->with('rapat')->where('tempat', 3)->first();
         // return response()->json([
         //     'status' => 200,
         //     'data' => $data
@@ -45,7 +45,19 @@ class RapatController extends Controller
 
     public function rupatjakstra()
     {
-        $data = Strahan::orderBy('tanggal', 'desc')->with('rapat')->first();
+        $data = Strahan::orderBy('tanggal', 'desc')->with('rapat')->where('tempat', 4)->first();
+        // return response()->json([
+        //     'status' => 200,
+        //     'data' => $data
+        // ], 200);
+        return view('strahan.rupat', [
+            'data' => $data
+        ]);
+    }
+
+    public function rupatrahkomhan()
+    {
+        $data = Strahan::orderBy('tanggal', 'desc')->with('rapat')->where('tempat', 6)->first();
         // return response()->json([
         //     'status' => 200,
         //     'data' => $data

@@ -38,13 +38,15 @@ Route::get('/strahan/jadwal-rapat', [StrahanController::class, 'findDate'])->nam
 
 Route::get('/strahan/aula-tritura', [RapatController::class, 'aulaTritura']);
 Route::get('/strahan/rupat-wilhan', [RapatController::class, 'rupatwilhan']);
-Route::get('/strahan/rupat-kersin', [RapatController::class, 'rupatwilhan']);
-Route::get('/strahan/rupat-jakstra', [RapatController::class, 'rupatwilhan']);
-Route::get('/strahan/rupat-rahkomhan', [RapatController::class, 'rupatwilhan']);
+Route::get('/strahan/rupat-kersin', [RapatController::class, 'rupatkersin']);
+Route::get('/strahan/rupat-jakstra', [RapatController::class, 'rupatjakstra']);
+Route::get('/strahan/rupat-rahkomhan', [RapatController::class, 'rupatrahkomhan']);
 
 Route::get('/strahan/login', [LoginController::class, 'index'] );
+Route::get('/strahan/akun', [LoginController::class, 'getAkun'] );
 Route::get('/strahan/register', [LoginController::class, 'create'] );
 
 Route::get('/strahan/input-info', [EditController::class, 'info'] );
 Route::post('/strahan/input-info', [EditController::class, 'editInfo'] );
 Route::get('/strahan/input-video', [EditController::class, 'video'] );
+Route::get('/strahan/input-pimpinan', [EditController::class, 'pimpinan'] );

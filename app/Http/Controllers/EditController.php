@@ -53,4 +53,9 @@ class EditController extends Controller
     {
         return view('strahan.edit.video');
     }
+
+    public function pimpinan()
+    {
+        return view('strahan.edit.pimpinan');
+    }
 }

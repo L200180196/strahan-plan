@@ -3,15 +3,23 @@
 @section('content')
     <!-- MAIN CONTENT -->
     <main class="flex-grow flex flex-col justify-center items-center px-4 py-10 bg-blue-100">
-        <h2 class="text-center text-2xl font-bold text-black mb-6">{{ $data->rapat->nama_rupat ?? '' }} LT.8 DITJEN STRAHAN
+        <h2 class="text-center text-2xl font-bold text-black mb-6">{{ $data->rapat->nama_rupat ?? '' }} LT.{{ $data->rapat->lantai }} DITJEN STRAHAN
         </h2>
         <div class="grid md:grid-cols-3 gap-6 w-full items-center">
 
             <!-- Gambar 1 -->
             <div class="bg-white rounded-md shadow-md p-3 text-center">
-                <img src="{{ asset('storage/' . $data->gambar1) }}" alt="Gambar Rapat 1"
-                    class="w-full h-auto object-cover rounded-md mb-3 border border-gray-300">
+                @if ($data->gambar1)
+                    <img src="{{ asset('storage/' . $data->gambar1) }}" alt="Gambar Rapat 2"
+                        class="w-full h-auto object-cover rounded-md mb-3 border border-gray-300">
+                @else
+                    <div
+                        class="w-full h-48 text-bold flex items-center justify-center border border-gray-300 rounded-md mb-3">
+                        Gambar Kosong
+                    </div>
+                @endif
             </div>
+
 
             <!-- Informasi Tengah -->
             <div class="bg-white rounded-md shadow-md px-6 py-20 text-center">
@@ -27,10 +35,19 @@
             </div>
 
             <!-- Gambar 2 -->
+
             <div class="bg-white rounded-md shadow-md p-3 text-center">
-                <img src="{{ asset('storage/' . $data->gambar2) }}" alt="Gambar Rapat 2"
-                    class="w-full h-auto object-cover rounded-md mb-3 border border-gray-300">
+                @if ($data->gambar2)
+                    <img src="{{ asset('storage/' . $data->gambar2) }}" alt="Gambar Rapat 2"
+                        class="w-full h-auto object-cover rounded-md mb-3 border border-gray-300">
+                @else
+                    <div
+                        class="w-full h-48 flex items-center justify-center border border-gray-300 rounded-md mb-3">
+                        Gambar Kosong
+                    </div>
+                @endif
             </div>
+
         </div>
 
     </main>

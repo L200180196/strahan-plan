@@ -37,8 +37,25 @@
 
 
         <div class="flex items-center gap-6">
+            <a href="/strahan/akun" class="font-semibold hover:underline">AKUN</a>
             <div class="relative">
-                <button id="dropdownButton" class="font-semibold hover:underline flex items-center gap-1">
+                <button id="dropdownButton1" class="font-semibold hover:underline flex items-center gap-1">
+                    KUSTOMISASI
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mt-0.5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+
+                <div id="dropdownMenu1"
+                    class="absolute right-0 mt-1 bg-blue-600 text-white text-sm rounded-md shadow-md hidden z-50 w-44">
+                    <a href="/strahan/input-info" class="block px-4 py-2 hover:bg-blue-500">Informasi</a>
+                    <a href="/strahan/input-pimpinan" class="block px-4 py-2 hover:bg-blue-500">Pimpinan</a>
+                    <a href="/strahan/input-video" class="block px-4 py-2 hover:bg-blue-500">Video</a>
+                </div>
+            </div>
+            <div class="relative">
+                <button id="dropdownButton2" class="font-semibold hover:underline flex items-center gap-1">
                     RAPAT
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mt-0.5" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
@@ -46,7 +63,7 @@
                     </svg>
                 </button>
 
-                <div id="dropdownMenu"
+                <div id="dropdownMenu2"
                     class="absolute right-0 mt-1 bg-blue-600 text-white text-sm rounded-md shadow-md hidden z-50 w-44">
                     <a href="/strahan/jadwal" class="block px-4 py-2 hover:bg-blue-500">Input Jadwal</a>
                     <a href="/strahan/jadwal-rapat" class="block px-4 py-2 hover:bg-blue-500">Jadwal Rapat</a>
@@ -69,7 +86,7 @@
 
         <!-- Bagian kiri: tanggal dan waktu -->
         <div class="flex items-center gap-2 text-sm font-medium text-black">
-            <span id="tanggal" class="bg-blue-200 px-3 py-1 rounded"></span>
+            <span id="tanggal1" class="bg-blue-200 px-3 py-1 rounded"></span>
             <span id="waktu" class="bg-orange-300 px-3 py-1 rounded"></span>
         </div>
 
@@ -99,7 +116,7 @@
             const waktuFormatted = `${jam} : ${menit}`;
 
             // Tampilkan ke elemen HTML
-            document.getElementById('tanggal').textContent = tanggalFormatted;
+            document.getElementById('tanggal1').textContent = tanggalFormatted;
             document.getElementById('waktu').textContent = waktuFormatted;
         }
 
@@ -109,19 +126,37 @@
         // Update setiap 1 detik
         setInterval(updateTanggalWaktu, 1000);
 
-        const dropdownButton = document.getElementById('dropdownButton');
-        const dropdownMenu = document.getElementById('dropdownMenu');
+        const dropdownButton1 = document.getElementById('dropdownButton1');
+        const dropdownMenu1 = document.getElementById('dropdownMenu1');
 
         // Toggle dropdown saat tombol diklik
-        dropdownButton.addEventListener('click', (event) => {
+        dropdownButton1.addEventListener('click', (event) => {
             event.stopPropagation(); // cegah klik menutup langsung
-            dropdownMenu.classList.toggle('hidden');
+            dropdownMenu1.classList.toggle('hidden');
+            dropdownMenu2.classList.add('hidden');
         });
 
         // Tutup dropdown saat klik di luar area dropdown
         window.addEventListener('click', (event) => {
-            if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
-                dropdownMenu.classList.add('hidden');
+            if (!dropdownButton1.contains(event.target) && !dropdownMenu1.contains(event.target)) {
+                dropdownMenu1.classList.add('hidden');
+            }
+        });
+
+        const dropdownButton2 = document.getElementById('dropdownButton2');
+        const dropdownMenu2 = document.getElementById('dropdownMenu2');
+
+        // Toggle dropdown saat tombol diklik
+        dropdownButton2.addEventListener('click', (event) => {
+            event.stopPropagation(); // cegah klik menutup langsung
+            dropdownMenu1.classList.add('hidden');
+            dropdownMenu2.classList.toggle('hidden');
+        });
+
+        // Tutup dropdown saat klik di luar area dropdown
+        window.addEventListener('click', (event) => {
+            if (!dropdownButton2.contains(event.target) && !dropdownMenu2.contains(event.target)) {
+                dropdownMenu2.classList.add('hidden');
             }
         });
     </script>
