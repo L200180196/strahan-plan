@@ -49,4 +49,5 @@ Route::get('/strahan/register', [LoginController::class, 'create'] );
 Route::get('/strahan/input-info', [EditController::class, 'info'] );
 Route::post('/strahan/input-info', [EditController::class, 'editInfo'] );
 Route::get('/strahan/input-video', [EditController::class, 'video'] );
+Route::post('/strahan/input-video', [EditController::class, 'editVideo'] );
 Route::get('/strahan/input-pimpinan', [EditController::class, 'pimpinan'] );

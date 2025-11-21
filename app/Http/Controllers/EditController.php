@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Info;
+use App\Models\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -52,6 +53,28 @@ class EditController extends Controller
     public function video()
     {
         return view('strahan.edit.video');
+    }
+
+    function editVideo(Request $request) {
+        $validated = $request->validate([
+            'video' => 'nullable'
+        ]);
+
+        if ($request->hasFile('video')) {
+            $validated['video'] = $request->file('video')->store('videos', 'public');
+        }
+
+        $data_video = Video::create($validated);
+
+        return response()->json([
+            'status' => 200,
+            'videos' => $data_video->get()
+        ], 200);
+
+        // return view('strahan.input-success', [
+        //     'status' => 'Success',
+        //     'videos' => $data_video->get()
+        // ]);
     }
 
     public function pimpinan()

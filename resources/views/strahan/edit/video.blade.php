@@ -6,7 +6,7 @@
         <div class="bg-white/90 rounded-lg shadow-lg p-8 w-full max-w-md border-t-4 border-blue-700">
             <h3 class="text-xl font-semibold text-center text-blue-700 mb-4">Video Halaman Utama</h3>
 
-            <form action="/strahan/input-video" method="POST" class="space-y-5">
+            <form action="/strahan/input-video" method="POST" class="space-y-5" enctype="multipart/form-data">
                 @csrf
                 <div>
                     <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-3">

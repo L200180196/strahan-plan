@@ -7,11 +7,11 @@
         <!-- VIDEO AREA -->
         <div class="flex-1 bg-white rounded-lg shadow-md p-4 flex flex-col items-center justify-center">
             <div class="relative w-full">
-                 <img src="{{ asset('img/upacara.png') }}" alt="upacara" class="w-full mt-5 rounded-md border border-gray-300">
-                {{-- <video class="w-full mt-10 rounded-md border border-gray-300" controls>
-                    <source src="{{ asset('videos/upacara.mp4') }}" type="video/mp4">
+                 {{-- <img src="{{ asset('img/upacara.png') }}" alt="upacara" class="w-full mt-5 rounded-md border border-gray-300"> --}}
+                <video class="w-full mt-10 rounded-md border border-gray-300" autoplay muted playsinline loop>
+                    <source src="{{ asset('storage/videos/EmCwai0zHmGwqdJFKhxnBWhKtlDiNjsP5LtZ6oFG.mp4') }}" type="video/mp4">
                     Browser Anda tidak mendukung pemutar video.
-                </video> --}}
+                </video>
             </div>
         </div>
 
